@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emission Analysis Report</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #2ecc71;
+      --danger: #e74c3c;
+      --gray: #7f8c8d;
+      --light-bg: #f5f7fa;
+      --accent-bg: #ecf0f1;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--light-bg) 0%, #c3cfe2 100%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: var(--primary);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .segment {
+      margin-bottom: 50px;
+      padding: 25px;
+      background: #fdfdfd;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .segment:hover {
+      transform: translateY(-5px);
+    }
+
+    .segment h2 {
+      color: var(--primary);
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      margin-bottom: 25px;
+      font-size: 1.75em;
+    }
+
+    .route-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: 0.3s ease-in-out;
+    }
+
+    .route-card:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+    }
+
+    .metric {
+      flex: 1;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.6em;
+      font-weight: 600;
+      color: var(--danger);
+    }
+
+    .metric-label {
+      color: var(--gray);
+      font-size: 0.95em;
+    }
+
+    .comparison {
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .route-number {
+      font-size: 1.25em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .results-block {
+      background: var(--accent-bg);
+      border-left: 6px solid var(--primary);
+      padding: 25px;
+      border-radius: 12px;
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre-wrap;
+      margin-bottom: 50px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.95em;
+      border-top: 1px solid #ddd;
+      padding-top: 25px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .route-card {
+        flex-direction: column;
+      }
+      .metric {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Route Emissions Analysis Report</h1>
+
+    <div class="segment">
+      <h2>Segment 1 Analysis</h2>
+      <div class="route-card">
+        <div class="metric">
+          <div class="route-number">Route 1</div>
+          <div class="metric-value">119.34 kg</div>
+          <div class="metric-label">CO2 Emissions</div>
+          <div class="comparison">+3.68 kg vs Route 2</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">11.77 hrs</div>
+          <div class="metric-label">Road Time</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">516.77 km</div>
+          <div class="metric-label">Distance</div>
+        </div>
+      </div>
+      <div class="route-card">
+        <div class="metric">
+          <div class="route-number">Route 2</div>
+          <div class="metric-value">115.66 kg</div>
+          <div class="metric-label">CO2 Emissions</div>
+          <div class="comparison">-3.68 kg vs Route 1</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">11.87 hrs</div>
+          <div class="metric-label">Road Time</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">516.77 km</div>
+          <div class="metric-label">Distance</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="segment">
+      <h2>Segment 2 Analysis</h2>
+      <div class="route-card">
+        <div class="metric">
+          <div class="route-number">Route 1</div>
+          <div class="metric-value">421.50 kg</div>
+          <div class="metric-label">CO2 Emissions</div>
+          <div class="comparison">-12.36 kg vs Route 2</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">41.40 hrs</div>
+          <div class="metric-label">Road Time</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">1817.36 km</div>
+          <div class="metric-label">Distance</div>
+        </div>
+      </div>
+      <div class="route-card">
+        <div class="metric">
+          <div class="route-number">Route 2</div>
+          <div class="metric-value">433.86 kg</div>
+          <div class="metric-label">CO2 Emissions</div>
+          <div class="comparison">+12.36 kg vs Route 1</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">42.43 hrs</div>
+          <div class="metric-label">Road Time</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">1817.36 km</div>
+          <div class="metric-label">Distance</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-block">
+=== Optimization Results ===
+
+Segment 1:
+  - Recommended Vehicle: Truck
+  - Best Route: 1
+  - Total Cost: $512.61
+
+Segment 2:
+  - Recommended Vehicle: Truck
+  - Best Route: 2
+  - Total Cost: $196.25
+    </div>
+
+    <footer>
+      Emission Analysis Report • Generated on April 1, 2025 • Version 1.0
+    </footer>
+  </div>
+</body>
+</html>
